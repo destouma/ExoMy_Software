@@ -20,7 +20,7 @@ def talker():
 
     while not rospy.is_shutdown():
         val = sensor.getValue()
-            rospy.loginfo("T="+val.temperature + " P="+val.pressure + " H="+val.humidity)
+        rospy.loginfo("T="+val.temperature + " P="+val.pressure + " H="+val.humidity)
         temperature.publish(val.temperature)
         pressure.publish(val.pressure)
         humidity.publish(val.humidity)
