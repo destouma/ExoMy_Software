@@ -1,11 +1,17 @@
 import smbus2
 import bme280
 
-class bme280();
+class bme280():
     port = 1
     address = 0x76
     bus = smbus2.SMBus(port)
 
-    def getValues(self):
+    def getValue(self):
         calibration_params = bme280.load_calibration_params(bus, address)
         data = bme280.sample(bus, address, calibration_params)
+
+sensor = bme280()
+data = sensor.getValue()
+print(data.temperature)
+print(data.pressure)
+print(data.humidity)
