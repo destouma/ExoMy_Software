@@ -8,8 +8,8 @@ class sensorBME280():
 
     def getValue(self):
         calibration_params = bme280.load_calibration_params(self.bus, self.address)
-        data = bme280.sample(self.bus, self.address, calibration_params)
-	    return data
+        val = bme280.sample(self.bus, self.address, calibration_params)
+	    return val
 
 sensor = sensorBME280()
 data = sensor.getValue()
