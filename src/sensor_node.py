@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import time
 import rospy
-
+from std_msgs.msg import String
 import smbus2
 import bme280
 
