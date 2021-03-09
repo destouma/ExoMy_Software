@@ -2,11 +2,16 @@
 import time
 import rospy
 
-import sensorBME280
+import smbus2
+import bme280
 
-sensor = sensorBME280()
+port = 1
+address = 0x76
+bus = smbus2.SMBus(port)
 
 def talker():
+    calibration_params = bme280.load_calibration_params(self.bus, self.address)
+
     rospy.init_node("sensor")
     rospy.loginfo("Starting the sensor node")
 
@@ -15,7 +20,7 @@ def talker():
     humidity = rospy.Publisher('/humidity', float, queue_size=1)
 
     while not rospy.is_shutdown():
-        val = sensor.getValue()
+        val = bme280.sample(self.bus, self.address, calibration_params)
         rospy.loginfo("T="+val.temperature + " P="+val.pressure + " H="+val.humidity)
         temperature.publish(val.temperature)
         pressure.publish(val.pressure)
