@@ -129,14 +129,14 @@
 
     var humi_listener = new ROSLIB.Topic({
       ros : ros,
-      name : "/hunidity",
+      name : "/humidity",
       messageType : 'std_msgs/String'
     });
 
     humi_listener.subscribe(function(m) {
       console.log(m)
       console.log(m.data);
-      document.getElementById("hunidity").innerHTML = m.data;
+      document.getElementById("humidity").innerHTML = m.data;
     });
 
   </script>
