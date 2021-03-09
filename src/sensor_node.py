@@ -7,8 +7,8 @@ from bme280 import SensorBME280
 sensor = SensorBME280()
 
 def talker():
-    rospy.init_node("bme280")
-    rospy.loginfo("Starting the bme280 node")
+    rospy.init_node("sensor")
+    rospy.loginfo("Starting the sensor node")
 
     temperature = rospy.Publisher('/temperature', float, queue_size=1)
     pressure = rospy.Publisher('/pressure', float, queue_size=1)

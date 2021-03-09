@@ -3,7 +3,7 @@
 #import the rospy package and the String message type
 import rospy
 from std_msgs.msg import String
-from bme280 import SensorBME280
+from sensorBME280 import SensorBME280
 
 sensor = SensorBME280()
 
