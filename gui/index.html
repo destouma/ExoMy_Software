@@ -114,6 +114,16 @@
       buttons[button_index] = 0;
     }
 
+  var temp_listener = new ROSLIB.Topic({
+    ros : ros,
+    name : '/temperature',
+    messageType : 'std_msgs/String'
+  });
+
+  temp_listener.subscribe(function(m) {
+    document.getElementById("temperature").innerHTML = m.data;
+  });
+
   </script>
   <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -137,6 +147,9 @@
           <button class="button buttonX" onclick="button_clicked(0)">SPOT TURN</button>
           <button class="button buttonA" onclick="button_clicked(1)">ACKERMANN</button>
           <button class="button buttonStart" onclick="button_clicked(9)">MOTORS</button>
+        </div>
+        <div>
+          <p>Temperature <span id="temperature"></span></p>
         </div>
       </div>
     </div>
