@@ -20,18 +20,7 @@
     var axes = [0, 0, 0, 0, 0, 0];
     var buttons = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-    ros.on('connection', function () {
-      document.getElementById("status").innerHTML = "Connected";
-    });
-
-    ros.on('error', function (error) {
-      document.getElementById("status").innerHTML = "Error";
-    });
-
-    ros.on('close', function () {
-      document.getElementById("status").innerHTML = "Closed";
-    });
-
+   
     createJoystick = function () {
       var options = {
         zone: document.getElementById('joy_container'),
@@ -114,17 +103,17 @@
       buttons[button_index] = 0;
     }
 
-  var temp_listener = new ROSLIB.Topic({
-    ros : ros,
-    name : '/temperature',
-    messageType : 'std_msgs/String'
-  });
+    var temp_listener = new ROSLIB.Topic({
+      ros : ros,
+      name : "/temperature",
+      messageType : 'std_msgs/String'
+    });
 
-  temp_listener.subscribe(function(m) {
-    console.log(m)
-    console.log(m.data);
-    document.getElementById("temperature").innerHTML = m.data;
-  });
+    temp_listener.subscribe(function(m) {
+      console.log(m)
+      console.log(m.data);
+      document.getElementById("temperature").innerHTML = m.data;
+    });
 
   </script>
   <link rel="stylesheet" type="text/css" href="style.css">
