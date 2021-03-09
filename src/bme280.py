@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-from smbus2 import SMBus
+import smbus2
 import bme280
 
 class SensorBME280():
