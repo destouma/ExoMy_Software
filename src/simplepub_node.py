@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 #import the rospy package and the String message type
 import rospy
 from std_msgs.msg import String
