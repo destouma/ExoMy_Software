@@ -6,10 +6,6 @@ from bme280 import SensorBME280
 
 sensor = SensorBME280()
 
-import roslib; roslib.load_manifest('beginner_tutorials')
-import rospy
-from std_msgs.msg import String
-
 def talker():
     rospy.init_node("bme280")
     rospy.loginfo("Starting the bme280 node")

@@ -14,6 +14,6 @@ class sensorBME280():
 
 sensor = sensorBME280()
 data = sensor.getValue()
-print(data.temperature)
-print(data.pressure)
-print(data.humidity)
+print("T=" + data.temperature)
+print("P=" + data.pressure)
+print("H=" + data.humidity)
