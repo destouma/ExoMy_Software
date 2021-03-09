@@ -121,6 +121,8 @@
   });
 
   temp_listener.subscribe(function(m) {
+    console.log(m)
+    console.log(m.data);
     document.getElementById("temperature").innerHTML = m.data;
   });
 
@@ -135,7 +137,6 @@
       <div class="left" id="left">
         <div class="joy_container" id="joy_container"></div>
       </div>
-
       <div class="middle" id="middle">
         <div class="image_container">
           <img id="video_output" style="object-fit:cover; width:100%;"></img>
@@ -148,10 +149,10 @@
           <button class="button buttonA" onclick="button_clicked(1)">ACKERMANN</button>
           <button class="button buttonStart" onclick="button_clicked(9)">MOTORS</button>
         </div>
-        <div>
-          <p>Temperature <span id="temperature"></span></p>
-        </div>
       </div>
+    </div>
+    <div>
+      <p>Temperature <span id="temperature"></span></p>
     </div>
   </main>
 
