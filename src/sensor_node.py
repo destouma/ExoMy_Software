@@ -2,9 +2,9 @@
 import time
 import rospy
 
-from bme280 import SensorBME280
+import sensorBME280
 
-sensor = SensorBME280()
+sensor = sensorBME280()
 
 def talker():
     rospy.init_node("sensor")

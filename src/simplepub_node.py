@@ -3,9 +3,9 @@
 #import the rospy package and the String message type
 import rospy
 from std_msgs.msg import String
-from sensorBME280 import SensorBME280
+import sensorBME280
 
-sensor = SensorBME280()
+sensor = sensorBME280()
 
 #function to publish messages at the rate of 2 messages per second
 def messagePublisher():
