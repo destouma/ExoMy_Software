@@ -115,6 +115,30 @@
       document.getElementById("temperature").innerHTML = m.data;
     });
 
+    var pres_listener = new ROSLIB.Topic({
+      ros : ros,
+      name : "/pressure",
+      messageType : 'std_msgs/String'
+    });
+
+    pres_listener.subscribe(function(m) {
+      console.log(m)
+      console.log(m.data);
+      document.getElementById("pressure").innerHTML = m.data;
+    });
+
+    var humi_listener = new ROSLIB.Topic({
+      ros : ros,
+      name : "/hunidity",
+      messageType : 'std_msgs/String'
+    });
+
+    humi_listener.subscribe(function(m) {
+      console.log(m)
+      console.log(m.data);
+      document.getElementById("hunidity").innerHTML = m.data;
+    });
+
   </script>
   <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -139,9 +163,12 @@
           <button class="button buttonStart" onclick="button_clicked(9)">MOTORS</button>
         </div>
       </div>
-    </div>
-    <div>
-      <p>Temperature <span id="temperature"></span></p>
+      <div>
+        <p>Temperature = <span id="temperature"></span></p>
+        <p>Pressure    = <span id="pressure"></span></p>
+        <p>Humidity    = <span id="humidity"></span></p>
+
+      </div>
     </div>
   </main>
 
