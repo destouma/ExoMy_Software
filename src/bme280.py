@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import smbus2
-import bme280
+from RPi.bme280 import bme280
 
 class SensorBME280():
     port = 1
