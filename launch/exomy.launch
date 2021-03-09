@@ -3,7 +3,6 @@
     <node name="motors" pkg="exomy" type="motor_node.py" respawn="true" output="screen" />
     <node name="joystick" pkg="exomy" type="joystick_parser_node.py" respawn="true" output="screen" />
     <node name="sensor" pkg="exomy" type="sensor_node.py" respawn="true" output="screen" />
-    <node name="simplepub" pkg="exomy" type="simplepub_node.py" respawn="true" output="screen" />
     
     <node respawn="true" pkg="joy" type="joy_node" name="joy_node">
         <param name="coalesce_interval" value="0.05"/>

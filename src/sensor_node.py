@@ -15,16 +15,16 @@ def talker():
     rospy.init_node("sensor")
     rospy.loginfo("Starting the sensor node")
 
-    temperature = rospy.Publisher('/temperature', float, queue_size=1)
-    pressure = rospy.Publisher('/pressure', float, queue_size=1)
-    humidity = rospy.Publisher('/humidity', float, queue_size=1)
+    temperature = rospy.Publisher('/temperature', String, queue_size=1)
+    pressure = rospy.Publisher('/pressure', String, queue_size=1)
+    humidity = rospy.Publisher('/humidity', String, queue_size=1)
 
     while not rospy.is_shutdown():
         val = bme280.sample(bus, address, calibration_params)
-        rospy.loginfo("T="+val.temperature + " P="+val.pressure + " H="+val.humidity)
-        temperature.publish(val.temperature)
-        pressure.publish(val.pressure)
-        humidity.publish(val.humidity)
+        rospy.loginfo("T="+str(val.temperature) + " P="+ str(val.pressure) + " H="+ str(val.humidity))
+        temperature.publish(str(val.temperature))
+        pressure.publish(str(val.pressure))
+        humidity.publish(str(val.humidity))
         rospy.sleep(1.0)
 
 
