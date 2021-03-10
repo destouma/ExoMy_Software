@@ -22,12 +22,9 @@ def talker():
     while not rospy.is_shutdown():
         val = bme280.sample(bus, address, calibration_params)
         rospy.loginfo("T="+str(val.temperature) + " P="+ str(val.pressure) + " H="+ str(val.humidity))
-        # temperature.publish(str(val.temperature))
-        # pressure.publish(str(val.pressure))
-        # humidity.publish(str(val.humidity))
-        temperature.publish(f'{val.temperature:.2f }')
-        pressure.publish(f'{val.pressure:.2f }')
-        humidity.publish(f'{val.humidity:.2f }')
+        temperature.publish(str(val.temperature))
+        pressure.publish(str(val.pressure))
+        humidity.publish(str(val.humidity))
         rospy.sleep(1.0)
 
 
