@@ -110,8 +110,6 @@
     });
 
     temp_listener.subscribe(function(m) {
-      console.log(m)
-      console.log(m.data);
       document.getElementById("temperature").innerHTML = m.data;
     });
 
@@ -122,8 +120,6 @@
     });
 
     pres_listener.subscribe(function(m) {
-      console.log(m)
-      console.log(m.data);
       document.getElementById("pressure").innerHTML = m.data;
     });
 
@@ -134,8 +130,6 @@
     });
 
     humi_listener.subscribe(function(m) {
-      console.log(m)
-      console.log(m.data);
       document.getElementById("humidity").innerHTML = m.data;
     });
 
@@ -163,7 +157,7 @@
           <button class="button buttonStart" onclick="button_clicked(9)">MOTORS</button>
         </div>
       </div>
-      <div>
+      <div class="bottom" id="bottom">
         <p>Temperature = <span id="temperature"></span></p>
         <p>Pressure    = <span id="pressure"></span></p>
         <p>Humidity    = <span id="humidity"></span></p>
